@@ -3,6 +3,16 @@ import 'package:get/get.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:lab/homepage/second_page.dart';
 
+var a = [
+  'SOLUTIONS',
+  '''HIGH-END INDUSTRIAL
+  MOBILITY SOLUTION,
+  SMART PARTNER
+  IN INDUSTRIAL FIELD!''',
+  'Retailers need automated retail solution to reduce their lost sales, and increase their revenue. By managing the store in real time, they can have accurate figures regarding their inventory or store operation.',
+  'Learn about'
+];
+
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);
 
@@ -102,6 +112,39 @@ class FirstPage extends StatelessWidget {
                   child: Image.asset(
                     'img/2.jpg',
                     fit: BoxFit.fill,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                // Row 에서 Container width, height 없이 균등 배분 할려면
+                // IntrinsicHeight, Expanded 두개를 사용해야 한다.
+                IntrinsicHeight(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    // crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(
+                        child: Image.asset(
+                          'img/3.jpg',
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          child: Column(
+                            children: [
+                              for (var i in a) Text(i)
+                              // Text(a[0]),
+                              // Text(a[1]),
+                              // Text(a[2]),
+                              // Text(a[3]),
+                            ],
+                          ),
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(
